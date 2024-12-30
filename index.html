@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BIJAK - Bisnis dan Jaringan Konsultasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="archive/css/navbar.css">
 
     <!-- Favicon untuk browser -->
@@ -26,6 +27,387 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="description" content="BIJAK - Bisnis dan Jaringan Konsultasi">
     
+
+   <style>
+    .footer {
+        background-color: #1a1f2c;
+        color: #ffffff;
+        padding: 80px 0 0;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    .footer-main {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+        gap: 40px;
+        padding-bottom: 60px;
+    }
+    
+    /* Company Info Styles */
+    .company-info {
+        max-width: 320px;
+    }
+    
+    .footer-logo {
+        height: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .company-desc {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    
+    /* App Download Section */
+    .download-apps h4 {
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        color: #fff;
+        font-weight: 600;
+    }
+    
+    .app-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: fit-content;
+    }
+    
+    .app-button {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px 15px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #ffffff;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+    }
+    
+    .app-button i {
+        font-size: 22px;
+        margin-right: 12px;
+    }
+    
+    .app-button-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .app-button-text span {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        opacity: 0.8;
+    }
+    
+    .app-button-text strong {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    
+    .app-button:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Footer Columns */
+    .footer-col h4 {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        color: #fff;
+        font-weight: 600;
+    }
+    
+    .footer-col ul {
+        list-style: none;
+    }
+    
+    .footer-col ul li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-col ul li a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+    }
+    
+    .footer-col ul li a:hover {
+        color: #ffffff;
+        padding-left: 5px;
+    }
+    
+    /* Contact Info */
+    .contact-info p {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+    }
+    
+    .contact-info i {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    /* Social Links */
+    .social-links {
+        display: flex;
+        gap: 12px;
+        margin-top: 25px;
+    }
+    
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .social-links a:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Powered By Section */
+    .powered-section {
+        max-width: 100%;
+    }
+    
+    .powered-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .powered-button {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px 15px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #ffffff;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: fit-content;
+    }
+    
+    .powered-button img {
+        height: 20px;
+        width: auto;
+        margin-right: 10px;
+    }
+    
+    .powered-button span {
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+    
+    .powered-button:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Footer Bottom */
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 25px 0;
+        text-align: center;
+    }
+    
+    .copyright p {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .footer-main {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+    
+        .company-info {
+            max-width: 100%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .footer {
+            padding: 60px 0 0;
+        }
+    
+        .footer-main {
+            grid-template-columns: 1fr;
+            gap: 50px;
+            text-align: center
+        }
+        .company-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+        }
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+        .company-desc {
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .download-apps {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .app-buttons {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+    
+        .app-button {
+            width: 100%;
+            padding: 10px auto;
+        }
+    
+        .powered-buttons {
+            width: 100%;
+            max-width: 280px;
+        }
+    
+        .powered-button {
+            width: 100%;
+        }
+    
+        .social-links {
+            justify-content: flex-start;
+        }
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .footer-col ul {
+            text-align: center;
+        }
+    
+        .footer-col ul li a:hover {
+            padding-left: 0;
+            transform: translateY(-2px);
+        }
+    
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .contact-info p {
+            justify-content: center;
+        }
+    
+        .social-links {
+            justify-content: center;
+        }
+    
+        .powered-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .powered-buttons {
+            width: 100%;
+            max-width: 280px;
+            align-items: center;
+        }
+    
+        .powered-button {
+            width: 100%;
+            justify-content: center;
+        }
+    
+        /* Update hover effects for mobile */
+        .app-button:hover,
+        .powered-button:hover,
+        .social-links a:hover {
+            transform: translateY(-2px);
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .footer-container {
+            padding: 0 20px;
+        }
+        .company-desc {
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+        .app-buttons,
+    .powered-buttons {
+        max-width: 250px;
+    }
+        .app-button {
+            padding: 8px 12px;
+        }
+    
+        .app-button i {
+            font-size: 20px;
+        }
+    
+        .powered-button {
+            padding: 8px 12px;
+        }
+    
+        .powered-button img {
+            height: 18px;
+        }
+        .footer-col h4 {
+            margin-bottom: 20px;
+        }
+    
+        .social-links {
+            gap: 10px;
+        }
+    
+        .social-links a {
+            width: 36px;
+            height: 36px;
+        }
+    }
+   </style>
 </head>
 <body>
     <nav class="navbar">
@@ -62,6 +444,92 @@
         <!-- Pindahkan overlay ke dalam navbar -->
         <div class="overlay"></div>
     </nav>
+    <br><br><br><br><br>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Company Info -->
+                <div class="footer-col company-info">
+                    <img src="design/logo/navbar1.png" alt="BIJAK Logo" class="footer-logo">
+                    <p class="company-desc">Membangun Masa Depan Bisnis Digital Indonesia melalui Inovasi dan Kolaborasi</p>
+                    <div class="download-apps">
+                        <h4>Download Aplikasi</h4>
+                        <div class="app-buttons">
+                            <a href="#" class="app-button">
+                                <i class="fab fa-google-play"></i>
+                                <div class="app-button-text">
+                                    <span>GET IT ON</span>
+                                    <strong>Google Play</strong>
+                                </div>
+                            </a>
+                            <a href="#" class="app-button">
+                                <i class="fab fa-apple"></i>
+                                <div class="app-button-text">
+                                    <span>Download on the</span>
+                                    <strong>App Store</strong>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#layanan">Layanan</a></li>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4>Kontak</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jl. A. Yani KM. 4,5, Banjarmasin</p>
+                        <p><i class="fas fa-phone"></i> +62 812-3456-7890</p>
+                        <p><i class="fas fa-envelope"></i> info@bijak.id</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+    
+                <!-- Powered By -->
+                <div class="footer-col powered-section">
+                    <h4>Powered By</h4>
+                    <div class="powered-buttons">
+                        <a href="#" class="powered-button">
+                            <img src="design/logo/apt.png" alt="APT">
+                            <span>Antasari Programming Team</span>
+                        </a>
+                        <a href="#" class="powered-button">
+                            <img src="https://logodownload.org/wp-content/uploads/2017/06/bitcoin-logo-1-1.png" alt="BTC">
+                            <span>Bitcoin</span>
+                        </a>
+                        <a href="#" class="powered-button">
+                            <img src="https://static.fsf.org/fsforg/graphics/GNU_30th_logo_with_banner.png" alt="GNU">
+                            <span>GNU's Not Unix</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2024 BIJAK. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
     <script src="archive/js/navbar.js"></script>
 </body>
 </html>
