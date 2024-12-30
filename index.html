@@ -190,6 +190,24 @@
             height: 36px;
             width: auto;
         }
+        /* Tambahkan CSS untuk footer text */
+.mobile-footer {
+    display: none;
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.8rem;
+    padding: 0 2rem;
+}
+
+.mobile-footer p {
+    margin: 5px 0;
+    opacity: 0.8;
+}
         /* Tambahkan ini di bagian style */
 .mobile-logo,
 .nav-links a,
@@ -254,7 +272,11 @@
                 text-align: center;
             }
             /* Pastikan overlay tidak menutupi menu */
-    
+            .mobile-footer {
+                display: block;
+            }
+        
+        
         }
         body.menu-open {
             overflow: hidden;
@@ -292,6 +314,12 @@
             <a href="#kontak">Kontak</a>
             <div class="auth-buttons">
                 <button class="btn btn-konsultasi">Mulai Konsultasi</button>
+            </div>
+
+            <!-- Tambahkan footer text -->
+            <div class="mobile-footer">
+                <p>Created By M. Kaspul Anwar (230104040212)</p>
+                <p>Powered By Antasari Programming Team</p>
             </div>
         </div>
     
