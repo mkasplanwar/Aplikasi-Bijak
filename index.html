@@ -12,15 +12,37 @@
             box-sizing: border-box;
         }
 
+        /* Overlay Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 998;
+    transition: all 0.3s ease;
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
         /* Navbar Styles */
         .navbar {
             background-color: #1687A7;
-            padding: 16px 80px; /* Updated padding for desktop */
-            position: fixed;
+            padding: 16px 80px;
+            position: relative;
             width: 100%;
             top: 0;
             left: 0;
-            z-index: 1000;
+            z-index: 997;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -29,7 +51,7 @@
 
         /* Logo Styles */
         .logo img {
-            height: 36px; /* Updated logo height */
+            height: 36px;
             width: auto;
             display: block;
         }
@@ -39,6 +61,10 @@
             display: flex;
             align-items: center;
             gap: 2rem;
+            z-index: 999;
+            /* Tambahkan ini untuk mencegah blur effect mempengaruhi menu */
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
         }
 
         .nav-links a {
@@ -72,7 +98,7 @@
             gap: 1rem;
         }
 
-        /* Update button styles with animation */
+        /* Button Konsultasi Styles */
         .btn-konsultasi {
             background: white;
             border: 2px solid white;
@@ -122,7 +148,7 @@
             width: 30px;
             height: 20px;
             position: relative;
-            z-index: 2000;
+            z-index: 1002; /* Increased z-index */
         }
 
         .hamburger span {
@@ -164,11 +190,24 @@
             height: 36px;
             width: auto;
         }
+        /* Tambahkan ini di bagian style */
+.mobile-logo,
+.nav-links a,
+.auth-buttons,
+.btn-konsultasi {
+    position: relative;
+    z-index: 999;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
+            
             .navbar {
                 padding: 16px 24px;
+                overflow: hidden; /* Untuk mengontrol overlay */
             }
 
             .mobile-logo {
@@ -178,7 +217,7 @@
             .nav-links {
                 position: fixed;
                 top: 0;
-                right: -100%;
+                right: -70%;
                 height: 100vh;
                 width: 70%;
                 background: #1687A7;
@@ -187,8 +226,14 @@
                 transition: all 0.5s ease;
                 box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
                 align-items: flex-start;
-                z-index: 1000;
+                z-index: 1001; /* Naikkan z-index */
             }
+        
+            /* Tambahkan ini untuk memastikan konten dalam nav-links tetap jelas */
+    .nav-links * {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
 
             .nav-links.active {
                 right: 0;
@@ -196,7 +241,6 @@
 
             .hamburger {
                 display: block;
-                z-index: 1001;
             }
 
             .auth-buttons {
@@ -205,37 +249,39 @@
                 margin-top: 2rem;
             }
 
-            .overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
+            .btn-konsultasi {
                 width: 100%;
-                height: 100%;
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(5px);
-                -webkit-backdrop-filter: blur(5px);
-                z-index: 999;
+                text-align: center;
             }
-
-            .overlay.active {
-                display: block;
+            /* Pastikan overlay tidak menutupi menu */
+    
+        }
+        body.menu-open {
+            overflow: hidden;
+        }
+        @supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
+            .overlay {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+            }
+        }
+        
+        /* Fallback jika backdrop-filter tidak didukung */
+        @supports not ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
+            .overlay {
+                background: rgba(255, 255, 255, 0.9);
             }
         }
     </style>
 </head>
 <body>
-    <!-- Overlay for mobile menu -->
-    <div class="overlay"></div>
-
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
             <img src="design/logo/navbar1.png" alt="BIJAK Logo">
         </div>
-
+    
         <div class="nav-links">
-            <!-- Added Mobile Logo in Off-canvas -->
             <div class="mobile-logo">
                 <img src="design/logo/navbar1.png" alt="BIJAK Logo">
             </div>
@@ -248,58 +294,72 @@
                 <button class="btn btn-konsultasi">Mulai Konsultasi</button>
             </div>
         </div>
-
+    
         <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
+        
+        <!-- Pindahkan overlay ke dalam navbar -->
+        <div class="overlay"></div>
     </nav>
-
     <script>
         const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
-        const overlay = document.querySelector('.overlay');
+const navLinks = document.querySelector('.nav-links');
+const overlay = document.querySelector('.overlay');
+const body = document.body;
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
-        });
+// Toggle menu
+hamburger.addEventListener('click', () => {
+    toggleMenu();
+});
 
-        // Close menu when clicking overlay
-        overlay.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
+// Close menu when clicking overlay
+overlay.addEventListener('click', () => {
+    toggleMenu();
+});
 
-        // Close menu when clicking nav links
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                overlay.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
+// Close menu when clicking nav links
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        toggleMenu();
+    });
+});
 
-        // Navbar scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            const navbar = document.querySelector('.navbar');
+// Function to toggle menu state
+function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    overlay.classList.toggle('active');
+    body.classList.toggle('menu-open');
+}
 
-            if (currentScroll <= 0) {
-                navbar.style.boxShadow = 'none';
-            } else {
-                navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
+// Navbar scroll effect
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    const navbar = document.querySelector('.navbar');
 
-            lastScroll = currentScroll;
-        });
+    if (currentScroll <= 0) {
+        navbar.style.boxShadow = 'none';
+    } else {
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    }
+
+    lastScroll = currentScroll;
+});
+
+// Button animation
+const konsultasiBtn = document.querySelector('.btn-konsultasi');
+
+konsultasiBtn.addEventListener('mouseenter', function(e) {
+    this.style.transform = 'translateY(-3px) scale(1.05)';
+});
+
+konsultasiBtn.addEventListener('mouseleave', function(e) {
+    this.style.transform = 'translateY(0) scale(1)';
+});
     </script>
 </body>
 </html>
