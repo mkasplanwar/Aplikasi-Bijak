@@ -108,6 +108,13 @@
     margin-bottom: 24px;
     font-weight: 600;
 }
+.partner-section h3 {
+    color: #F6F5F5;
+    font-size: 19px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    text-align: center;
+}
 
 /* Quick Links */
 .footer-links {
@@ -365,7 +372,8 @@
     .footer-logo, 
     .brand-description, 
     .footer-motto,
-    .footer-section h3 {
+    .footer-section h3,
+    .partner-section h3 {
         text-align: center;
     }
 
