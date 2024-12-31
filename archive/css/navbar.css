@@ -243,15 +243,27 @@
         min-height: 100vh;
         width: 70%;
         background: #1687A7;
-        display: flex; /* Tetap flex untuk mengatur konten vertikal */
-        flex-direction: column; /* Mengatur items menjadi vertikal */
-        align-items: flex-start; /* Mengatur alignment ke kiri */
-        gap: 1.5rem; /* Spacing antara menu items */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
         padding: 2rem;
         transition: all 0.5s ease;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
         z-index: 1001;
         overflow-y: auto;
+    }
+    .nav-links > *:not(.mobile-logo) {
+        order: 3; /* Semua item selain mobile-logo dan auth-buttons akan berada di urutan 3 */
+    }
+
+    .mobile-logo {
+        order: 1; /* Logo akan selalu di atas */
+    }
+
+    /* Menghapus border bottom dari link terakhir sebelum tombol */
+    .nav-links a:nth-last-child(2) {
+        border-bottom: none;
     }
 
 
@@ -270,7 +282,7 @@
     /* Tambahkan ini untuk mengatur container auth-buttons */
     .auth-buttons {
         width: 100%;
-        margin-top: auto; /* Mendorong auth-buttons ke bagian bawah */
+        order: 2; /* Memberikan urutan tampilan */
         flex-direction: column;
         gap: 1rem;
     }
@@ -304,6 +316,10 @@
     }
     .nav-links a::after {
         display: none; /* Menghilangkan underline animation pada mobile */
+    }
+     /* Pastikan tombol konsultasi tidak memiliki border */
+     .btn-konsultasi {
+        border-bottom: none !important;
     }
 }
 
