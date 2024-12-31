@@ -12,7 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -51,13 +51,23 @@
 
 /* Navigation Links */
 .nav-links {
+    position: fixed;
+    top: 0;
+    bottom: 0; /* Tambahkan ini */
+    right: -70%;
+    height: 100%; /* Tambahkan ini */
+    min-height: 100vh;
+    width: 70%;
+    background: #1687A7;
+    flex-direction: column;
+    padding: 2rem;
     display: flex;
-    align-items: center;
     gap: 2rem;
-    z-index: 999;
-    /* Tambahkan ini untuk mencegah blur effect mempengaruhi menu */
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    transition: all 0.5s ease;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    align-items: flex-start;
+    z-index: 1001;
+    overflow-y: auto; /* Tambahkan ini */
 }
 
 .nav-links a {
@@ -195,6 +205,7 @@
     font-family: 'Segoe UI', sans-serif;
     font-size: 0.8rem;
     padding: 0 2rem;
+    z-index: 1001; /* Tambahkan ini */
 }
 
 .mobile-footer p {
@@ -228,21 +239,51 @@
         position: fixed;
         top: 0;
         right: -70%;
-        height: 100vh;
+        height: 100%;
+        min-height: 100vh;
         width: 70%;
         background: #1687A7;
-        flex-direction: column;
+        display: flex; /* Tetap flex untuk mengatur konten vertikal */
+        flex-direction: column; /* Mengatur items menjadi vertikal */
+        align-items: flex-start; /* Mengatur alignment ke kiri */
+        gap: 1.5rem; /* Spacing antara menu items */
         padding: 2rem;
         transition: all 0.5s ease;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-        align-items: flex-start;
-        z-index: 1001; /* Naikkan z-index */
+        z-index: 1001;
+        overflow-y: auto;
     }
+
 
     /* Tambahkan ini untuk memastikan konten dalam nav-links tetap jelas */
     .nav-links * {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
+    }
+     /* Tambahkan style untuk link di dalam nav-links */
+     .nav-links a {
+        width: 100%; /* Membuat link mengambil lebar penuh */
+        padding: 0.5rem 0; /* Menambah padding vertical */
+        font-size: 1.1rem;
+    }
+
+    /* Tambahkan ini untuk mengatur container auth-buttons */
+    .auth-buttons {
+        width: 100%;
+        margin-top: auto; /* Mendorong auth-buttons ke bagian bawah */
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-links a:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Animasi hover yang lebih subtle untuk mobile */
+    .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        padding-left: 1rem;
     }
 
     .nav-links.active {
@@ -253,12 +294,6 @@
         display: block;
     }
 
-    .auth-buttons {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 2rem;
-    }
-
     .btn-konsultasi {
         width: 100%;
         text-align: center;
@@ -267,10 +302,15 @@
     .mobile-footer {
         display: block;
     }
+    .nav-links a::after {
+        display: none; /* Menghilangkan underline animation pada mobile */
+    }
 }
 
 body.menu-open {
     overflow: hidden;
+    position: fixed; /* Tambahkan ini */
+    width: 100%; /* Tambahkan ini */
 }
 @supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
     .overlay {
