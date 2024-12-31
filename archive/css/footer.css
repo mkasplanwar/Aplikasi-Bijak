@@ -88,7 +88,7 @@
 /* Section Headers */
 .footer-section h3 {
     color: #F6F5F5;
-    font-size: 19px;
+    font-size: 19;
     margin-bottom: 24px;
     font-weight: 600;
 }
@@ -198,9 +198,9 @@
     padding: 0;
 }
 
-.powered-section h3 {
+.powered-section h2 {
     color: #F6F5F5;
-    font-size: 19px;
+    font-size: 1.4rem;
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -334,7 +334,7 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: 36px 0px;
+        padding: 36px 10px;
     }
 
     .footer-content {

@@ -27,6 +27,7 @@
     opacity: 1;
     visibility: visible;
 }
+
 /* Navbar Styles */
 .navbar {
     background-color: #1687A7;
@@ -49,25 +50,11 @@
     display: block;
 }
 
-/* Navigation Links */
+/* Navigation Links - Desktop Default */
 .nav-links {
-    position: fixed;
-    top: 0;
-    bottom: 0; /* Tambahkan ini */
-    right: -70%;
-    height: 100%; /* Tambahkan ini */
-    min-height: 100vh;
-    width: 70%;
-    background: #1687A7;
-    flex-direction: column;
-    padding: 2rem;
     display: flex;
+    align-items: center;
     gap: 2rem;
-    transition: all 0.5s ease;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-    align-items: flex-start;
-    z-index: 1001;
-    overflow-y: auto; /* Tambahkan ini */
 }
 
 .nav-links a {
@@ -99,6 +86,7 @@
 .auth-buttons {
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
 /* Button Konsultasi Styles */
@@ -115,6 +103,7 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
 }
 
 .btn-konsultasi:hover {
@@ -126,24 +115,6 @@
     transform: translateY(-1px) scale(1.02);
 }
 
-.btn-konsultasi::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(22, 135, 167, 0.1);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-}
-
-.btn-konsultasi:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
 /* Hamburger Menu */
 .hamburger {
     display: none;
@@ -151,7 +122,7 @@
     width: 30px;
     height: 20px;
     position: relative;
-    z-index: 1002; /* Increased z-index */
+    z-index: 1002;
 }
 
 .hamburger span {
@@ -168,166 +139,100 @@
 .hamburger span:nth-child(2) { top: 8px; }
 .hamburger span:nth-child(3) { top: 16px; }
 
-/* Hamburger Animation */
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 8px;
-}
-
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 8px;
-}
-
 /* Mobile Logo in Off-canvas */
 .mobile-logo {
     display: none;
-    margin-bottom: 2rem;
 }
 
-.mobile-logo img {
-    height: 36px;
-    width: auto;
-}
-/* Tambahkan CSS untuk footer text */
+/* Mobile Footer */
 .mobile-footer {
     display: none;
-    position: absolute;
-    bottom: 100px;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 0.8rem;
-    padding: 0 2rem;
-    z-index: 1001; /* Tambahkan ini */
-}
-
-.mobile-footer p {
-    margin: 5px 0;
-    opacity: 0.8;
-}
-/* Tambahkan ini di bagian style */
-.mobile-logo,
-.nav-links a,
-.auth-buttons,
-.btn-konsultasi {
-    position: relative;
-    z-index: 999;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-    
     .navbar {
         padding: 16px 24px;
-        overflow: hidden; /* Untuk mengontrol overlay */
-    }
-
-    .mobile-logo {
-        display: block;
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -70%;
-        height: 100%;
-        min-height: 100vh;
-        width: 70%;
-        background: #1687A7;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-        padding: 2rem;
-        transition: all 0.5s ease;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-        z-index: 1001;
-        overflow-y: auto;
-    }
-    .nav-links > *:not(.mobile-logo) {
-        order: 3; /* Semua item selain mobile-logo dan auth-buttons akan berada di urutan 3 */
-    }
-
-    .mobile-logo {
-        order: 1; /* Logo akan selalu di atas */
-    }
-
-    /* Menghapus border bottom dari link terakhir sebelum tombol */
-    .nav-links a:nth-last-child(2) {
-        border-bottom: none;
-    }
-
-
-    /* Tambahkan ini untuk memastikan konten dalam nav-links tetap jelas */
-    .nav-links * {
-        backdrop-filter: none;
-        -webkit-backdrop-filter: none;
-    }
-     /* Tambahkan style untuk link di dalam nav-links */
-     .nav-links a {
-        width: 100%; /* Membuat link mengambil lebar penuh */
-        padding: 0.5rem 0; /* Menambah padding vertical */
-        font-size: 1.1rem;
-    }
-
-    /* Tambahkan ini untuk mengatur container auth-buttons */
-    .auth-buttons {
-        width: 100%;
-        order: 2; /* Memberikan urutan tampilan */
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .nav-links a:not(:last-child) {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Animasi hover yang lebih subtle untuk mobile */
-    .nav-links a:hover {
-        background: rgba(255, 255, 255, 0.1);
-        padding-left: 1rem;
-    }
-
-    .nav-links.active {
-        right: 0;
     }
 
     .hamburger {
         display: block;
     }
 
+    .mobile-logo {
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    .mobile-logo img {
+        height: 36px;
+        width: auto;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -70%;
+        height: 100vh;
+        width: 70%;
+        background: #1687A7;
+        flex-direction: column;
+        padding: 2rem;
+        align-items: flex-start;
+        transition: all 0.5s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
+    }
+
+    .nav-links a:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .auth-buttons {
+        width: 100%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     .btn-konsultasi {
         width: 100%;
         text-align: center;
     }
-    /* Pastikan overlay tidak menutupi menu */
+
     .mobile-footer {
         display: block;
+        position: absolute;
+        bottom: 2rem;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 0.8rem;
+        padding: 0 2rem;
     }
-    .nav-links a::after {
-        display: none; /* Menghilangkan underline animation pada mobile */
-    }
-     /* Pastikan tombol konsultasi tidak memiliki border */
-     .btn-konsultasi {
-        border-bottom: none !important;
+
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
     }
 }
 
-body.menu-open {
-    overflow: hidden;
-    position: fixed; /* Tambahkan ini */
-    width: 100%; /* Tambahkan ini */
-}
+/* Backdrop Filter Support */
 @supports (backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) {
     .overlay {
         background: rgba(255, 255, 255, 0.1);
@@ -336,7 +241,6 @@ body.menu-open {
     }
 }
 
-/* Fallback jika backdrop-filter tidak didukung */
 @supports not ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
     .overlay {
         background: rgba(255, 255, 255, 0.9);
