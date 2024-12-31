@@ -1,19 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIJAK Modern Footer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BIJAK - Bisnis dan Jaringan Konsultasi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Reset & Base Styles */
 
-* {
+    <!-- Favicon untuk browser -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../design/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../design/favicon/favicon.ico">
+    
+    <!-- Favicon untuk iOS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../design/favicon/apple.png">
+    <link rel="mask-icon" href="../design/favicon/favicon.svg" color="#1687A7">
+    
+    <!-- Favicon untuk Android -->
+    <link rel="manifest" href="../manifest.json">
+    
+    <!-- Meta tags untuk PWA -->
+    <meta name="theme-color" content="#1687A7">
+    <meta name="msapplication-TileColor" content="#1687A7">
+    <meta name="application-name" content="BIJAK">
+    <meta name="apple-mobile-web-app-title" content="BIJAK">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="BIJAK - Bisnis dan Jaringan Konsultasi">
+    
+    <style>
+        /* Reset untuk footer */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+
+* {
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Footer Layout */
@@ -22,6 +49,10 @@
     color: #F6F5F5;
     padding: 30px 50px;
     position: relative;
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
 }
 
 .footer::before {
@@ -37,14 +68,18 @@
 
 .footer-container {
     max-width: 1300px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 32px;
+    overflow-x: hidden;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 64px;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Brand Section */
@@ -55,6 +90,7 @@
 .footer-logo img {
     height: 40px;
     margin-bottom: 16px;
+    max-width: 100%;
 }
 
 .brand-description {
@@ -75,6 +111,7 @@
     display: flex;
     gap: 16px;
     margin-top: 32px;
+    flex-wrap: wrap;
 }
 
 .social-link {
@@ -99,14 +136,22 @@
 /* Section Headers */
 .footer-section h3 {
     color: #F6F5F5;
-    font-size: 19;
+    font-size: 19px;
     margin-bottom: 24px;
     font-weight: 600;
+}
+.partner-section h3 {
+    color: #F6F5F5;
+    font-size: 19px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    text-align: center;
 }
 
 /* Quick Links */
 .footer-links {
     list-style: none;
+    width: 100%;
 }
 
 .footer-links li {
@@ -130,6 +175,7 @@
 /* Contact Info */
 .contact-info {
     list-style: none;
+    width: 100%;
 }
 
 .contact-info li {
@@ -154,6 +200,9 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 48px;
 }
 
 .store-button {
@@ -167,6 +216,7 @@
     text-decoration: none;
     transition: all 0.3s ease;
     width: 100%;
+    max-width: 100%;
 }
 
 .store-button:hover {
@@ -203,25 +253,14 @@
     font-weight: 600;
 }
 
-/* Technology Partner Section */
-.powered-section {
-    margin-top: 3rem;
-    padding: 0;
-}
-
-.powered-section h2 {
-    color: #F6F5F5;
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
 .powered-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 32px;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
 }
 
 .powered-content {
@@ -235,6 +274,7 @@
     transition: all 0.3s ease;
     cursor: pointer;
     min-width: 300px;
+    max-width: 100%;
 }
 
 .powered-logo {
@@ -285,6 +325,7 @@
     border-radius: 12px;
     border: 1px solid rgba(211, 224, 234, 0.1);
     min-width: 300px;
+    max-width: 100%;
 }
 
 .creator-info i {
@@ -312,14 +353,16 @@
 .footer-bottom {
     margin-top: 64px;
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .footer-bottom:before {
     content: '';
     position: absolute;
     top: 0;
-    left: -50px;
-    right: -50px;
+    left: 0;
+    width: 100%;
     height: 1px;
     background: rgba(211, 224, 234, 0.1);
 }
@@ -333,6 +376,7 @@
     gap: 16px;
     text-align: center;
     width: 100%;
+    max-width: 100%;
 }
 
 /* Media Queries */
@@ -345,7 +389,11 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: 36px 10px;
+        padding: 36px 16px;
+    }
+
+    .footer-container {
+        padding: 0 16px;
     }
 
     .footer-content {
@@ -356,7 +404,8 @@
     .footer-logo, 
     .brand-description, 
     .footer-motto,
-    .footer-section h3 {
+    .footer-section h3,
+    .partner-section h3 {
         text-align: center;
     }
 
@@ -377,13 +426,14 @@
 
     .powered-wrapper {
         flex-direction: column;
-        gap: 32px;
+        gap: 16px;
     }
 
     .powered-content,
     .creator-info {
         width: 100%;
-        justify-content: center;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .footer-bottom-content {
@@ -394,13 +444,16 @@
     </style>
 </head>
 <body>
+    
+    <br><br><br><br><br>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-content">
                 <!-- Brand Section -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="design/logo/navbar1.png" alt="BIJAK Logo">
+                        <img src="../design/logo/navbar1.png" alt="BIJAK Logo">
                         <p class="brand-description">BIJAK adalah platform konsultasi bisnis yang mempertemukan pelaku UMKM dengan konsultan bisnis.</p>
                         <p class="footer-motto">"Bijak Bersama, Sukses Bersama"</p>
                     </div>
@@ -418,9 +471,9 @@
                     <ul class="footer-links">
                         <li><a href="#"><i class="fas fa-chevron-right"></i>Home</a></li>
                         <li><a href="#"><i class="fas fa-chevron-right"></i>About Us</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i>Services</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i>Blog</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i>Careers</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Disclaimer</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Syarat dan Ketentuan</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i>Kebijakan Privasi</a></li>
                     </ul>
                 </div>
 
@@ -430,7 +483,7 @@
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Jl. Ahmad Yani KM 4,5, Banjarmasin, Kalimantan Selatan</span>
+                            <span>Jl. kelayan raya, Block B, South District 525436</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -470,28 +523,28 @@
                 </div>
             </div>
             <!-- Tambahkan kode HTML ini sebelum footer-bottom -->
-<div class="powered-section">
-    <h2>Our Technology Partner</h2>
-    <div class="powered-wrapper">
-        <div class="powered-content">
-            <div class="powered-logo">
-                <img src="design/logo/apt.png" alt="APT Logo">
+            <div class="partner-section">
+                <h3>Our Technology Partner</h3>
+                <div class="powered-wrapper">
+                    <div class="powered-content">
+                        <div class="powered-logo">
+                            <img src="../design/logo/apt.png" alt="APT Logo">
+                        </div>
+                        <div class="powered-text">
+                            <span class="powered-label">Proudly Powered By</span>
+                            <span class="powered-name">Antasari Programming Team</span>
+                        </div>
+                    </div>
+                    
+                    <div class="creator-info">
+                        <i class="fas fa-code-branch"></i>
+                        <div class="creator-text">
+                            <span class="creator-label">Developed with ❤️ by</span>
+                            <span class="creator-name">M. Kaspul Anwar 230104040212</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="powered-text">
-                <span class="powered-label">Proudly Powered By</span>
-                <span class="powered-name">Antasari Programming Team</span>
-            </div>
-        </div>
-        
-        <div class="creator-info">
-            <i class="fas fa-code-branch"></i>
-            <div class="creator-text">
-                <span class="creator-label">Developed with ❤️ by</span>
-                <span class="creator-name">M. Kaspul Anwar (230104040212)</span>
-            </div>
-        </div>
-    </div>
-</div>
 
             <!-- Footer Bottom -->
            <!-- Ganti bagian Footer Bottom dengan yang baru -->
