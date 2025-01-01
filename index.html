@@ -7,12 +7,14 @@
     <title>BIJAK - Bisnis dan Jaringan Konsultasi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
      <!-- Reset CSS - Import pertama -->
     <link rel="stylesheet" href="archive/css/reset.css">
 
     <!-- Component CSS - Import setelahnya -->
     <link rel="stylesheet" href="archive/css/navbar.css">
+    <link rel="stylesheet" href="archive/css/hero.css">
     <link rel="stylesheet" href="archive/css/footer.css">
 
     <!-- Favicon untuk browser -->
@@ -72,7 +74,94 @@
         <!-- Pindahkan overlay ke dalam navbar -->
         <div class="overlay"></div>
     </nav>
-    <br><br><br><br><br>
+    <section class="hero-section">
+        <div class="bg-elements">
+            <div class="bg-circle circle-1"></div>
+            <div class="bg-circle circle-2"></div>
+            <div class="dots-pattern"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        Platform Bisnis Digital #1
+                    </div>
+
+                    <h1 class="hero-title">
+                        Bijak <span class="highlight">Bersama</span><br> Sukses <span class="highlight">Bersama</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Kami hadir untuk mendukung pelaku usaha dengan solusi konsultasi cerdas dan jaringan bisnis yang solid. Bersama BIJAK, raih kesuksesan dan tumbuhkan bisnis Anda dengan bijak.
+                    </p>
+
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-number">50,000+</div>
+                            <div class="stat-label">Usaha Terdaftar</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label">Konsultan</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">34</div>
+                            <div class="stat-label">Provinsi di Indonesia</div>
+                        </div>
+                    </div>
+
+                    <div class="cta-group">
+                        <a href="marketplace.html" class="btn btn-primary">
+                            <!-- <i class="fas fa-user-plus"></i> -->
+                            <i class="fa-solid fa-business-time"></i>
+                            Mulai Konsultasi
+                        </a>
+                        <a href="tentang.html" class="btn btn-secondary">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            Daftar Sebagai Konsultan
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image-container">
+                    <img src="https://img.freepik.com/free-photo/business-finance-employment-female-successful-entrepreneurs-concept-friendly-smiling-office-manager-greeting-new-coworker-businesswoman-welcome-clients-with-hand-wave-hold-laptop_1258-59122.jpg?t=st=1735700909~exp=1735704509~hmac=5ba7b84be9afbbc8b3e16dce4b08a7c219dde592742964cfa17bc92196c9edbf&w=826" 
+                         alt="TaniKita Platform" 
+                         class="hero-image">
+                    
+                    <div class="feature-card card-farmer">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-arrow-trend-up"></i>
+                        </div>
+                        <div>
+                            <h4>Jaringan Lebih Luas</h4>
+                            <p>Kemitraan Tumbuh 75%</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card card-delivery">
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h4>Konsultan Ahli</h4>
+                            <p>Seluruh Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="order-guide">
+         <!-- Background Elements -->
+    <div class="guide-bg">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+        <div class="bg-dots"></div>
+    </div>
+
 
     <footer class="footer">
         <div class="footer-container">
@@ -183,5 +272,12 @@
         </div>
     </footer>
     <script src="archive/js/navbar.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+    </script>
 </body>
 </html>
