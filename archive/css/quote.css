@@ -1,0 +1,205 @@
+.bijak__quote-block {
+    padding: 120px 24px;
+    background: linear-gradient(135deg, #F6F5F5 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.bijak__quote-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.bijak__quote-patterns {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bijak__pattern {
+    position: absolute;
+    background: #276678;
+    opacity: 0.03;
+}
+
+.bijak__pattern--1 {
+    width: 300px;
+    height: 300px;
+    border-radius: 50px;
+    transform: rotate(45deg);
+    top: -100px;
+    right: -150px;
+}
+
+.bijak__pattern--2 {
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+    transform: rotate(-15deg);
+    bottom: -50px;
+    left: -100px;
+}
+
+.bijak__quote-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.bijak__quote-inner {
+    background: #ffffff;
+    border-radius: 2px;
+    padding: 60px;
+    box-shadow: 20px 20px 60px rgba(39, 102, 120, 0.05);
+    border: 1px solid rgba(39, 102, 120, 0.08);
+}
+
+.bijak__quote-headline {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.bijak__quote-tag {
+    background: #1687A7;
+    color: #ffffff;
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.bijak__quote-line {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #D3E0EA 0%, transparent 100%);
+}
+
+.bijak__quote-body {
+    margin-bottom: 40px;
+}
+
+.bijak__quote-text {
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #276678;
+    font-weight: 300;
+    position: relative;
+}
+
+.bijak__quote-marker {
+    font-family: "Georgia", serif;
+    font-size: 4rem;
+    line-height: 0;
+    color: #1687A7;
+    opacity: 0.5;
+    position: absolute;
+    top: 20px;
+    left: -30px;
+}
+
+.bijak__quote-marker--end {
+    position: relative;
+    top: 10px;
+    left: 5px;
+}
+
+.bijak__quote-highlight {
+    color: #1687A7;
+    font-weight: 500;
+}
+
+.bijak__quote-footer {
+    padding-top: 40px;
+    border-top: 1px solid rgba(39, 102, 120, 0.08);
+}
+
+.bijak__quote-author-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.bijak__quote-author-image {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.bijak__quote-author-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1687A7;
+    transform: rotate(-15deg);
+    opacity: 0.1;
+    border-radius: 4px;
+}
+
+.bijak__quote-author-image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.bijak__quote-author {
+    font-size: 1.25rem;
+    color: #276678;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+}
+
+.bijak__quote-position {
+    font-size: 0.875rem;
+    color: #1687A7;
+    margin: 0;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .bijak__quote-block {
+        padding: 80px 20px;
+    }
+
+    .bijak__quote-inner {
+        padding: 40px 30px;
+    }
+
+    .bijak__quote-text {
+        font-size: 1.5rem;
+    }
+
+    .bijak__quote-marker {
+        font-size: 3rem;
+        left: -20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bijak__quote-block {
+        padding: 60px 16px;
+    }
+
+    .bijak__quote-inner {
+        padding: 30px 20px;
+    }
+
+    .bijak__quote-text {
+        font-size: 1.25rem;
+    }
+
+    .bijak__quote-author-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bijak__quote-author-image {
+        margin: 0 auto;
+    }
+}
