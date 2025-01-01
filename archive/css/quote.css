@@ -1,205 +1,317 @@
-.bijak__quote-block {
+:root {
+    --bijak-gradient: linear-gradient(135deg, #1687A7, #276678);
+    --bijak-glass: rgba(255, 255, 255, 0.1);
+    --bijak-backdrop: blur(10px) saturate(180%);
+}
+
+.bijak__quote {
+    min-height: 100vh;
     padding: 120px 24px;
-    background: linear-gradient(135deg, #F6F5F5 0%, #ffffff 100%);
+    background: var(--bijak-white);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+/* Mesh Background */
+.bijak__mesh-bg {
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    background-image: 
+        linear-gradient(var(--bijak-primary) 1px, transparent 1px),
+        linear-gradient(90deg, var(--bijak-primary) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: meshMove 20s linear infinite;
+}
+
+.bijak__quote-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.bijak__content-card {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 0;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 40px rgba(39, 102, 120, 0.08),
+        0 0 0 1px rgba(39, 102, 120, 0.05);
+    transition: transform 0.3s ease;
+}
+
+/* Left Column - Author */
+.bijak__content-left {
+    background: var(--bijak-gradient);
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
 }
 
-.bijak__quote-grid {
-    max-width: 1200px;
-    margin: 0 auto;
+.bijak__content-left::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    animation: backgroundShimmer 15s infinite linear;
+}
+
+.bijak__author-profile {
+    text-align: center;
+    color: white;
     position: relative;
+    z-index: 1;
 }
 
-.bijak__quote-patterns {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.bijak__pattern {
-    position: absolute;
-    background: #276678;
-    opacity: 0.03;
-}
-
-.bijak__pattern--1 {
-    width: 300px;
-    height: 300px;
-    border-radius: 50px;
-    transform: rotate(45deg);
-    top: -100px;
-    right: -150px;
-}
-
-.bijak__pattern--2 {
+.bijak__author-image {
     width: 200px;
     height: 200px;
-    border-radius: 30px;
-    transform: rotate(-15deg);
-    bottom: -50px;
-    left: -100px;
-}
-
-.bijak__quote-wrapper {
-    position: relative;
-    z-index: 2;
-}
-
-.bijak__quote-inner {
-    background: #ffffff;
-    border-radius: 2px;
-    padding: 60px;
-    box-shadow: 20px 20px 60px rgba(39, 102, 120, 0.05);
-    border: 1px solid rgba(39, 102, 120, 0.08);
-}
-
-.bijak__quote-headline {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 40px;
-}
-
-.bijak__quote-tag {
-    background: #1687A7;
-    color: #ffffff;
-    padding: 6px 16px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-
-.bijak__quote-line {
-    flex-grow: 1;
-    height: 1px;
-    background: linear-gradient(90deg, #D3E0EA 0%, transparent 100%);
-}
-
-.bijak__quote-body {
-    margin-bottom: 40px;
-}
-
-.bijak__quote-text {
-    font-size: 2rem;
-    line-height: 1.5;
-    color: #276678;
-    font-weight: 300;
+    margin: 0 auto 32px;
     position: relative;
 }
 
-.bijak__quote-marker {
-    font-family: "Georgia", serif;
-    font-size: 4rem;
-    line-height: 0;
-    color: #1687A7;
-    opacity: 0.5;
-    position: absolute;
-    top: 20px;
-    left: -30px;
-}
-
-.bijak__quote-marker--end {
-    position: relative;
-    top: 10px;
-    left: 5px;
-}
-
-.bijak__quote-highlight {
-    color: #1687A7;
-    font-weight: 500;
-}
-
-.bijak__quote-footer {
-    padding-top: 40px;
-    border-top: 1px solid rgba(39, 102, 120, 0.08);
-}
-
-.bijak__quote-author-card {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.bijak__quote-author-image {
-    position: relative;
-    width: 80px;
-    height: 80px;
-}
-
-.bijak__quote-author-shape {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #1687A7;
-    transform: rotate(-15deg);
-    opacity: 0.1;
-    border-radius: 4px;
-}
-
-.bijak__quote-author-image img {
-    position: relative;
+.bijak__author-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 24px;
+    position: relative;
+    z-index: 1;
 }
 
-.bijak__quote-author {
-    font-size: 1.25rem;
-    color: #276678;
-    margin: 0 0 8px 0;
+.bijak__image-backdrop {
+    position: absolute;
+    inset: -12px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    animation: imageRotate 10s linear infinite;
+}
+
+.bijak__author-info h3 {
+    font-size: 1.75rem;
+    margin: 0 0 12px 0;
     font-weight: 500;
 }
 
-.bijak__quote-position {
-    font-size: 0.875rem;
-    color: #1687A7;
+.bijak__author-info p {
+    font-size: 1rem;
     margin: 0;
-    line-height: 1.5;
     opacity: 0.8;
+    line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-    .bijak__quote-block {
-        padding: 80px 20px;
-    }
+/* Right Column - Quote */
+.bijak__content-right {
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+}
 
-    .bijak__quote-inner {
-        padding: 40px 30px;
+.bijak__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: rgba(22, 135, 167, 0.07);
+    border-radius: 100px;
+    color: var(--bijak-primary);
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.bijak__badge-icon {
+    animation: rotateIcon 4s linear infinite;
+}
+
+.bijak__quote-text {
+    font-size: 2.75rem;
+    line-height: 1.3;
+    color: var(--bijak-dark);
+    position: relative;
+    z-index: 2;
+    padding-left: 45px;
+}
+
+.bijak__quote-text::before {
+    content: '"';
+    position: absolute;
+    left: -10px;
+    top: -20px;
+    font-size: 6rem;
+    color: var(--bijak-primary);
+    opacity: 0.15;
+    font-family: serif;
+}
+
+.bijak__quote-text::after {
+    content: '"';
+    display: inline;
+    font-family: serif;
+    color: var(--bijak-primary);
+    opacity: 0.15;
+    font-size: 6rem;
+    position: absolute;
+    bottom: -80px;
+    right: -10px;
+}
+
+.bijak__highlight-word {
+    color: var(--bijak-primary);
+    font-weight: 600;
+    display: inline-block;
+    position: relative;
+}
+
+.bijak__highlight-word::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 100%;
+    height: 8px;
+    background: rgba(22, 135, 167, 0.1);
+    z-index: -1;
+    transform-origin: left;
+    animation: highlightWidth 0.8s ease forwards;
+}
+
+/* Animations */
+@keyframes meshMove {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(-40px) rotate(1deg); }
+}
+
+@keyframes backgroundShimmer {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes imageRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes highlightWidth {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+@keyframes rotateIcon {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .bijak__content-left,
+    .bijak__content-right {
+        padding: 60px;
     }
 
     .bijak__quote-text {
-        font-size: 1.5rem;
+        font-size: 2.25rem;
     }
 
-    .bijak__quote-marker {
-        font-size: 3rem;
-        left: -20px;
+    .bijak__author-image {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+@media (max-width: 992px) {
+    .bijak__content-card {
+        grid-template-columns: 1fr;
+    }
+
+    .bijak__content-left {
+        order: 2;
+        padding: 60px;
+    }
+
+    .bijak__content-right {
+        order: 1;
+    }
+
+    .bijak__author-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .bijak__author-info h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .bijak__quote {
+        padding: 80px 20px;
+    }
+
+    .bijak__content-right {
+        padding: 40px;
+    }
+
+    .bijak__quote-text {
+        font-size: 1.75rem;
+        padding-left: 35px;
+    }
+
+    .bijak__quote-text::before {
+        font-size: 4rem;
+        top: -15px;
+    }
+
+    .bijak__quote-text::after {
+        font-size: 4rem;
+        bottom: -60px;
     }
 }
 
 @media (max-width: 480px) {
-    .bijak__quote-block {
-        padding: 60px 16px;
+    .bijak__quote {
+        padding: 40px 16px;
     }
 
-    .bijak__quote-inner {
-        padding: 30px 20px;
+    .bijak__content-left,
+    .bijak__content-right {
+        padding: 32px 24px;
     }
 
     .bijak__quote-text {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
+        padding-left: 25px;
     }
 
-    .bijak__quote-author-card {
-        flex-direction: column;
-        text-align: center;
+    .bijak__quote-text::before {
+        font-size: 3rem;
+        top: -10px;
+        left: -5px;
     }
 
-    .bijak__quote-author-image {
-        margin: 0 auto;
+    .bijak__quote-text::after {
+        font-size: 3rem;
+        bottom: -40px;
+        right: -5px;
+    }
+
+    .bijak__author-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .bijak__badge {
+        padding: 8px 16px;
+        font-size: 0.875rem;
     }
 }
