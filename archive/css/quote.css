@@ -6,7 +6,7 @@
 
 .bijak__quote {
     min-height: 100vh;
-    padding: 120px 24px;
+    padding: 60px 48px;
     background: var(--bijak-white);
     position: relative;
     overflow: hidden;
