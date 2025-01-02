@@ -15,8 +15,13 @@
 }
 
 .partners-header h2 {
-    font-size: 2rem;
+    font-size: 36px;
     color: #1a1f2c;
+    margin-bottom: 0.5rem;
+}
+.partners-header span {
+    font-size: 36px;
+    color: #1687A7;
     margin-bottom: 0.5rem;
 }
 
@@ -33,7 +38,7 @@
 }
 
 .partner-category {
-    background: #f8fafc;
+    background: #D3E0EA;
     border-radius: 16px;
     padding: 1.5rem;
     transition: all 0.3s ease;
@@ -116,7 +121,7 @@
 
 .stat-number {
     display: block;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 0.25rem;
