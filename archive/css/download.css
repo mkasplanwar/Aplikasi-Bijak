@@ -1,18 +1,19 @@
+:root {
 /* Fonts */
---bijak-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --bijak-font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             
 /* Primary Colors */
---bijak-primary: #1687A7;
---bijak-dark: #276678;
---bijak-white: #FFFFFF;
+    --bijak-primary: #1687A7;
+    --bijak-dark: #276678;
+    --bijak-white: #FFFFFF;
 
 /* Gradient Colors */
---bijak-gradient-primary: linear-gradient(135deg, #1687A7, #276678);
---bijak-gradient-light: linear-gradient(135deg, rgba(22, 135, 167, 0.1), rgba(39, 102, 120, 0.1));
+    --bijak-gradient-primary: linear-gradient(135deg, #1687A7, #276678);
+    --bijak-gradient-light: linear-gradient(135deg, rgba(22, 135, 167, 0.1), rgba(39, 102, 120, 0.1));
 
 /* Background Colors */
---bijak-bg-light: #F6F8F9;
---bijak-bg-white: #FFFFFF;
+    --bijak-bg-light: #F6F8F9;
+    --bijak-bg-white: #FFFFFF;
 
 /* Text Colors */
 --bijak-text-primary: #276678;
@@ -39,20 +40,6 @@
 --bijak-radius-lg: 20px;
 }
 
-/* Reset & Base Styles */
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-body {
-font-family: var(--bijak-font);
-line-height: 1.5;
-color: var(--bijak-text-primary);
-background: var(--bijak-bg-white);
-}
-
 /* Animation Keyframes */
 @keyframes floatAnimation {
 0%, 100% { transform: translateY(0); }
@@ -70,6 +57,10 @@ background: var(--bijak-bg-white);
 padding: var(--bijak-space-3xl) 0;
 position: relative;
 overflow: hidden;
+font-family: var(--bijak-font);
+line-height: 1.5;
+color: var(--bijak-text-primary);
+background: var(--bijak-bg-white);
 }
 
 .bijak__pattern {
