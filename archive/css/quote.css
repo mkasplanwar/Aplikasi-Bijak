@@ -1,5 +1,5 @@
 :root {
-    --bijak-gradient: linear-gradient(135deg, #1687A7, #276678);
+    --bijak-gradient: linear-gradient(135deg, #1687A7, #1687A7);
     --bijak-glass: rgba(255, 255, 255, 0.1);
     --bijak-backdrop: blur(10px) saturate(180%);
 }
