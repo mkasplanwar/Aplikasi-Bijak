@@ -95,26 +95,32 @@
 }
 
 .bijak__disclaimer-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
     margin-bottom: 32px;
 }
 
-.bijak__disclaimer-badge {
-    background: var(--bijak-disclaimer-primary);
-    color: white;
+.bijak__header-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(22, 135, 167, 0.1);
     padding: 8px 16px;
     border-radius: 100px;
+}
+
+.bijak__disclaimer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bijak-disclaimer-accent);
+    animation: pulse 2s infinite;
+}
+
+.bijak__disclaimer-badge {
+    color: var(--bijak-disclaimer-primary);
     font-size: 0.875rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-}
-
-.bijak__disclaimer-icon {
-    color: var(--bijak-disclaimer-accent);
-    animation: pulse 2s infinite;
 }
 
 .bijak__disclaimer-title {
@@ -181,6 +187,9 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .bijak__disclaimer-header{
+        text-align: center
+    }
     .bijak__disclaimer {
         padding: 80px 0;
     }
@@ -219,18 +228,21 @@
         font-size: 1.75rem;
     }
 
-    .bijak__disclaimer-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+    .bijak__header-wrapper {
+        padding: 6px 12px;
     }
 
     .bijak__disclaimer-badge {
         font-size: 0.75rem;
     }
+
+    .bijak__disclaimer-icon svg {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
 }
