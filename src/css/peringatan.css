@@ -16,10 +16,10 @@
     --bijak-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes floatAnimation {
+/* @keyframes floatAnimation {
     0%, 100% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(-20px) rotate(5deg); }
-}
+} */
 
 .bijak__disclaimer {
     position: relative;
