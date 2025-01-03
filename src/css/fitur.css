@@ -75,6 +75,7 @@
     box-shadow: 0 10px 30px var(--bijak-feature-shadow);
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .bijak__feature-card:hover {
@@ -82,12 +83,16 @@
 }
 
 .bijak__feature-card.featured {
-    border: 2px solid var(--bijak-feature-primary);
     transform: scale(1.05);
-}
-
-.bijak__feature-card.featured:hover {
-    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 15px 40px var(--bijak-feature-shadow);
+    background: linear-gradient(
+        var(--bijak-feature-card-bg),
+        var(--bijak-feature-card-bg)
+    ) padding-box,
+    linear-gradient(45deg, 
+        rgba(22, 135, 167, 0.1), 
+        rgba(39, 102, 120, 0.1)
+    ) border-box;
 }
 
 .bijak__feature-icon {
@@ -95,6 +100,9 @@
     color: var(--bijak-feature-primary);
     margin-bottom: 20px;
     transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bijak__feature-card:hover .bijak__feature-icon {
@@ -124,6 +132,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: left;
 }
 
 .bijak__feature-list li {
@@ -133,6 +142,7 @@
     margin-bottom: 12px;
     color: var(--bijak-feature-text);
     font-size: 1rem;
+    padding: 0 10px;
 }
 
 .bijak__feature-list li i {
