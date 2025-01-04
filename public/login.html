@@ -3,80 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - BIJAK</title>
+    <title>BIJAK - Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <div class="login-wrapper">
-    <!-- Animated Background -->
-    <div class="login-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-
-    <!-- Login Container -->
     <div class="login-container">
-        <!-- Logo -->
-        <div class="login-logo">
-            <img src="logo.svg" alt="BIJAK">
-        </div>
-
         <!-- Welcome Text -->
         <div class="login-welcome">
-            <h1>Selamat Datang di BIJAK</h1>
-            <p>Platform Manajemen UMKM #1 di Indonesia</p>
+            <h1>Selamat Datang Kembali!</h1>
+            <p>Masuk untuk mengelola bisnis Anda</p>
+        </div>
+
+        <!-- Default Credentials Note -->
+        <div class="credentials-note">
+            <div class="note-header">
+                <i class="fas fa-info-circle"></i>
+                <span>Default Credentials</span>
+            </div>
+            <div class="note-content">
+                <p><strong>Username:</strong> user</p>
+                <p><strong>Password:</strong> user123</p>
+            </div>
         </div>
 
         <!-- Login Form -->
         <form class="login-form">
             <div class="form-group">
+                <label for="email">Username</label>
                 <div class="input-wrapper">
-                    <i class="fas fa-envelope"></i>
-                    <input type="email" placeholder="Email" required>
-                    <span class="focus-border"></span>
+                    <i class="fa-solid fa-user"></i>
+                    <input type="email" id="email" placeholder="mkaspulanwar" required>
                 </div>
             </div>
 
             <div class="form-group">
+                <div class="password-header">
+                    <label for="password">Password</label>
+                    <a href="#" class="forgot-link">Lupa password?</a>
+                </div>
                 <div class="input-wrapper">
                     <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" id="password" placeholder="Masukkan password" required>
                     <button type="button" class="toggle-password">
                         <i class="fas fa-eye"></i>
                     </button>
-                    <span class="focus-border"></span>
                 </div>
             </div>
 
-            <div class="form-options">
-                <label class="remember-me">
-                    <input type="checkbox">
+            <div class="form-group remember-me">
+                <label class="checkbox-wrapper">
+                    <input type="checkbox" id="remember">
                     <span class="checkmark"></span>
-                    Ingat Saya
+                    <span>Ingat saya</span>
                 </label>
-                <a href="#" class="forgot-password">Lupa Password?</a>
             </div>
 
-            <button type="submit" class="login-btn">
+            <button type="submit" class="login-button">
                 <span>Masuk</span>
                 <i class="fas fa-arrow-right"></i>
             </button>
-
-            <div class="social-login">
-                <span class="divider">atau masuk dengan</span>
-                <button type="button" class="google-btn">
-                    <img src="google-icon.svg" alt="Google">
-                    <span>Google</span>
-                </button>
-            </div>
         </form>
 
-        <!-- Sign Up Link -->
-        <p class="signup-link">
-            Belum punya akun? <a href="#">Daftar Sekarang</a>
-        </p>
+        <div class="register-link">
+            Belum punya akun? <a href="/register">Daftar sekarang</a>
+        </div>
     </div>
 </div>
 
@@ -84,12 +76,15 @@
 :root {
     --primary: #1687A7;
     --secondary: #276678;
-    --text: #2D3748;
-    --text-light: #718096;
-    --bg: #F7FAFC;
+    --text-dark: #1E293B;
+    --text-light: #64748B;
+    --border: #E2E8F0;
+    --background: #F8FAFC;
     --white: #FFFFFF;
-    --error: #E53E3E;
-    --success: #38A169;
+    --error: #EF4444;
+    --success: #10B981;
+    --warning-bg: #FEF3C7;
+    --warning-border: #F59E0B;
 }
 
 * {
@@ -100,112 +95,35 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: var(--bg);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.login-wrapper {
-    width: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
-    position: relative;
-    overflow: hidden;
 }
 
-/* Animated Background */
-.login-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
-.blob {
-    position: absolute;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    filter: blur(60px);
-    opacity: 0.2;
-    border-radius: 50%;
-    animation: blobFloat 20s infinite;
-}
-
-.blob-1 {
-    width: 400px;
-    height: 400px;
-    top: -200px;
-    left: -100px;
-}
-
-.blob-2 {
-    width: 300px;
-    height: 300px;
-    bottom: -150px;
-    right: -50px;
-    animation-delay: -7s;
-}
-
-.blob-3 {
-    width: 250px;
-    height: 250px;
-    bottom: 50%;
-    left: 50%;
-    animation-delay: -14s;
-}
-
-@keyframes blobFloat {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    25% {
-        transform: translate(10px, -10px) scale(1.05);
-    }
-    50% {
-        transform: translate(0, 20px) scale(0.95);
-    }
-    75% {
-        transform: translate(-10px, -15px) scale(1.02);
-    }
-}
-
-/* Login Container */
-.login-container {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 24px;
+.login-wrapper {
     width: 100%;
     max-width: 440px;
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    position: relative;
 }
 
-/* Logo */
-.login-logo {
+.login-container {
+    width: 100%;
+}
+
+.login-welcome {
     text-align: center;
     margin-bottom: 24px;
 }
 
-.login-logo img {
-    height: 40px;
-    width: auto;
-}
-
-/* Welcome Text */
-.login-welcome {
-    text-align: center;
-    margin-bottom: 32px;
-}
-
 .login-welcome h1 {
     font-size: 24px;
-    color: var(--text);
+    color: var(--text-dark);
     margin-bottom: 8px;
 }
 
@@ -214,56 +132,100 @@ body {
     font-size: 16px;
 }
 
-/* Form Styles */
+/* Credentials Note Styles */
+.credentials-note {
+    background-color: var(--warning-bg);
+    border: 2px solid var(--warning-border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.note-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.note-header i {
+    color: var(--warning-border);
+}
+
+.note-content {
+    padding-left: 24px;
+}
+
+.note-content p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.note-content strong {
+    font-family: monospace;
+    font-weight: 600;
+}
+
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.password-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.forgot-link {
+    font-size: 14px;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: var(--secondary);
 }
 
 .input-wrapper {
     position: relative;
 }
 
-.input-wrapper i {
+.input-wrapper i:not(.toggle-password) {
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--text-light);
-    transition: color 0.3s;
+    font-size: 16px;
 }
 
 .input-wrapper input {
     width: 100%;
-    padding: 14px 16px 14px 48px;
-    border: 2px solid #E2E8F0;
+    padding: 14px 48px;
+    border: 2px solid var(--border);
     border-radius: 12px;
-    font-size: 16px;
-    transition: all 0.3s;
-    background: var(--bg);
+    font-size: 15px;
+    transition: all 0.3s ease;
+    color: var(--text-dark);
 }
 
 .input-wrapper input:focus {
-    outline: none;
     border-color: var(--primary);
-    background: var(--white);
-}
-
-.input-wrapper input:focus + i {
-    color: var(--primary);
-}
-
-.focus-border {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: width 0.3s;
-}
-
-.input-wrapper input:focus ~ .focus-border {
-    width: 100%;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(22, 135, 167, 0.1);
 }
 
 .toggle-password {
@@ -278,136 +240,92 @@ body {
     padding: 0;
 }
 
-/* Form Options */
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 24px;
-}
-
 .remember-me {
+    margin-top: 16px;
+}
+
+.checkbox-wrapper {
     display: flex;
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    color: var(--text-light);
-    font-size: 14px;
 }
 
-.forgot-password {
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.3s;
+.checkbox-wrapper input {
+    display: none;
 }
 
-.forgot-password:hover {
-    color: var(--secondary);
-}
-
-/* Login Button */
-.login-btn {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.login-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(22, 135, 167, 0.2);
-}
-
-/* Social Login */
-.social-login {
-    margin-top: 24px;
-    text-align: center;
-}
-
-.divider {
-    display: block;
-    text-align: center;
-    margin: 16px 0;
-    color: var(--text-light);
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
     position: relative;
+    transition: all 0.3s ease;
 }
 
-.divider::before,
-.divider::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 45%;
-    height: 1px;
-    background: #E2E8F0;
-}
-
-.divider::before {
-    left: 0;
-}
-
-.divider::after {
-    right: 0;
-}
-
-.google-btn {
-    width: 100%;
-    padding: 12px;
-    background: white;
-    border: 2px solid #E2E8F0;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.google-btn:hover {
-    background: var(--bg);
+.checkbox-wrapper input:checked + .checkmark {
+    background: var(--primary);
     border-color: var(--primary);
 }
 
-.google-btn img {
-    width: 20px;
-    height: 20px;
+.checkbox-wrapper input:checked + .checkmark:after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
 }
 
-/* Sign Up Link */
-.signup-link {
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 32px;
+}
+
+.login-button:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.register-link {
     text-align: center;
     margin-top: 24px;
     color: var(--text-light);
+    font-size: 14px;
 }
 
-.signup-link a {
+.register-link a {
     color: var(--primary);
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.3s;
 }
 
-.signup-link a:hover {
+.register-link a:hover {
     color: var(--secondary);
 }
 
 /* Responsive Design */
 @media (max-width: 480px) {
-    .login-container {
+    .login-wrapper {
         padding: 24px;
-        margin: 16px;
+        border-radius: 16px;
     }
 
     .login-welcome h1 {
@@ -418,40 +336,35 @@ body {
         font-size: 14px;
     }
 
+    .credentials-note {
+        padding: 12px;
+    }
+
     .input-wrapper input {
+        padding: 12px 48px;
         font-size: 14px;
-        padding: 12px 16px 12px 40px;
+    }
+
+    .login-button {
+        padding: 12px;
+        font-size: 15px;
     }
 }
 </style>
 
 <script>
-// Toggle Password Visibility
 document.querySelector('.toggle-password').addEventListener('click', function() {
-    const input = this.parentElement.querySelector('input');
+    const passwordInput = document.querySelector('#password');
     const icon = this.querySelector('i');
     
-    if (input.type === 'password') {
-        input.type = 'text';
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
         icon.classList.remove('fa-eye');
         icon.classList.add('fa-eye-slash');
     } else {
-        input.type = 'password';
+        passwordInput.type = 'password';
         icon.classList.remove('fa-eye-slash');
         icon.classList.add('fa-eye');
     }
-});
-
-// Form Animation
-document.querySelectorAll('.input-wrapper input').forEach(input => {
-    input.addEventListener('focus', () => {
-        input.parentElement.classList.add('focused');
-    });
-    
-    input.addEventListener('blur', () => {
-        if (!input.value) {
-            input.parentElement.classList.remove('focused');
-        }
-    });
 });
 </script>
