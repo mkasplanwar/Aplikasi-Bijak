@@ -1,15 +1,13 @@
 {
     "cleanUrls": true,
-    "redirects": [
+    "rewrites": [
         {
             "source": "/",
-            "destination": "/index.html",
-            "permanent": true
+            "destination": "/index.html"
         },
         {
             "source": "/:path*",
-            "destination": "/public/:path*",
-            "permanent": true
+            "destination": "/public/:path*"
         }
     ]
 }
