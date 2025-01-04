@@ -118,12 +118,12 @@
                     </div>
 
                     <div class="cta-group">
-                        <a href="marketplace.html" class="btn btn-primary">
+                        <a href="#" class="btn btn-primary">
                             <!-- <i class="fas fa-user-plus"></i> -->
                             <i class="fa-solid fa-right-to-bracket"></i>
                             Mulai Konsultasi
                         </a>
-                        <a href="tentang.html" class="btn btn-secondary">
+                        <a href="#" class="btn btn-secondary">
                             <i class="fa-solid fa-circle-info"></i>
                             Pelajari Lebih Lanjut
                         </a>
@@ -131,7 +131,7 @@
                 </div>
 
                 <div class="hero-image-container">
-                    <img src="src/imgs/hero.jpg" 
+                    <img src="asset/imgs/hero.jpg" 
                          alt="TaniKita Platform" 
                          class="hero-image">
                     
@@ -144,7 +144,6 @@
                             <p>Kemitraan Tumbuh 75%</p>
                         </div>
                     </div>
-
                     <div class="feature-card card-delivery">
                         <div class="feature-icon">
                             <i class="fa-solid fa-user-tie"></i>
@@ -179,7 +178,7 @@
                         Akses berbagai fitur unggulan untuk mengelola dan mengembangkan Bisnis Anda.
                     </p>
                     <div class="bijak__app-preview">
-                        <img src="../design/user-interface/home.svg" alt="BIJAK Business App Interface">
+                        <img src="asset/design/user-interface/home.svg" alt="BIJAK Business App Interface">
                     </div>
                     <a href="#download" class="bijak__download-btn">
                         <i class="fa-solid fa-right-to-bracket"></i>
@@ -195,7 +194,7 @@
                         Platform khusus untuk memberikan layanan konsultasi berkualitas kepada pelaku UMKM
                     </p>
                     <div class="bijak__app-preview">
-                        <img src="../design/user-interface/consultant.svg" alt="BIJAK Consultant App Interface">
+                        <img src="asset/design/user-interface/consultant.svg" alt="BIJAK Consultant App Interface">
                     </div>
                     <a href="#download" class="bijak__download-btn bijak__download-btn--consultant">
                         <i class="fa-solid fa-right-to-bracket"></i>
@@ -285,7 +284,7 @@
                 <div class="bijak__content-left">
                     <div class="bijak__author-profile">
                         <div class="bijak__author-image">
-                            <img src="src/imgs/nadiem.jpg" alt="Nadiem Makarim">
+                            <img src="asset/imgs/nadiem.jpg" alt="Nadiem Makarim">
                             <div class="bijak__image-backdrop"></div>
                         </div>
                         <div class="bijak__author-info">
@@ -340,31 +339,31 @@
                     <div class="category-label">Sektor Bank & Fintech</div>
                     <div class="logo-group">
                         <div class="partner-logo" >
-                            <img src="src/imgs/bri.png" alt="Bank BRI">
+                            <img src="asset/imgs/bri.png" alt="Bank BRI">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/bca.png" alt="Bank BCA">
+                            <img src="asset/imgs/bca.png" alt="Bank BCA">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/bni.png" alt="Bank BNI">
+                            <img src="asset/imgs/bni.png" alt="Bank BNI">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/gopay.png" alt="gopay">
+                            <img src="asset/imgs/gopay.png" alt="gopay">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/qris.png" alt="qris">
+                            <img src="asset/imgs/qris.png" alt="qris">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/jago.png" alt="bank Jago">
+                            <img src="asset/imgs/jago.png" alt="bank Jago">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/bibit.png" alt="bibit">
+                            <img src="asset/imgs/bibit.png" alt="bibit">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/mandiri.png" alt="Mandiri">
+                            <img src="asset/imgs/mandiri.png" alt="Mandiri">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/bitcoin.png" alt="Bitcoin">
+                            <img src="asset/imgs/bitcoin.png" alt="Bitcoin">
                         </div>
                     </div>
                 </div>
@@ -372,32 +371,32 @@
                     <div class="category-label">Sektor Teknologi & Industri</div>
                     <div class="logo-group">
                         <div class="partner-logo" >
-                            <img src="src/imgs/telkomsel.png" alt="Telkomsel">
+                            <img src="asset/imgs/telkomsel.png" alt="Telkomsel">
                         </div>
                         
                         <div class="partner-logo" >
-                            <img src="src/imgs/traveloka.png" alt="Traveloka">
+                            <img src="asset/imgs/traveloka.png" alt="Traveloka">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/tanikita.png" alt="TaniKita">
+                            <img src="asset/imgs/tanikita.png" alt="TaniKita">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/bukitasam.png" alt="Bukit Asam">
+                            <img src="asset/imgs/bukitasam.png" alt="Bukit Asam">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/gojek.png" alt="Gojek">
+                            <img src="asset/imgs/gojek.png" alt="Gojek">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/adaro.png" alt="Adaro">
+                            <img src="asset/imgs/adaro.png" alt="Adaro">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/mekari.png" alt="Mekari">
+                            <img src="asset/imgs/mekari.png" alt="Mekari">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/tokopedia.png" alt="Gojek">
+                            <img src="asset/imgs/tokopedia.png" alt="Gojek">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/microstrategy.png" alt="Microstrategy">
+                            <img src="asset/imgs/microstrategy.png" alt="Microstrategy">
                         </div>
                     </div>
                 </div>
@@ -407,31 +406,31 @@
                     <div class="category-label">Sektor Retail & Konsumen</div>
                     <div class="logo-group">
                         <div class="partner-logo" >
-                            <img src="src/imgs/alfamart.png" alt="Alfamart">
+                            <img src="asset/imgs/alfamart.png" alt="Alfamart">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/indomaret.png" alt="Indomaret">
+                            <img src="asset/imgs/indomaret.png" alt="Indomaret">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/unilever.png" alt="Unilever">
+                            <img src="asset/imgs/unilever.png" alt="Unilever">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/nestle.png" alt="Nestle">
+                            <img src="asset/imgs/nestle.png" alt="Nestle">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/hm.jpeg" alt="h&m">
+                            <img src="asset/imgs/hm.jpeg" alt="h&m">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/starbuck.png" alt="Starbuck">
+                            <img src="asset/imgs/starbuck.png" alt="Starbuck">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/mcdonald.png" alt="McDonald">
+                            <img src="asset/imgs/mcdonald.png" alt="McDonald">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/informa.png" alt="Informa">
+                            <img src="asset/imgs/informa.png" alt="Informa">
                         </div>
                         <div class="partner-logo" >
-                            <img src="src/imgs/kfc.png" alt="KFC">
+                            <img src="asset/imgs/kfc.png" alt="KFC">
                         </div>
                     </div>
                 </div>
@@ -504,7 +503,7 @@
                 <!-- Brand Section -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="../design/logo/navbar1.png" alt="BIJAK Logo">
+                        <img src="asset/design/logo/navbar1.png" alt="BIJAK Logo">
                         <p class="brand-description">BIJAK adalah platform konsultasi bisnis yang mempertemukan pelaku UMKM dengan konsultan bisnis.</p>
                         <p class="footer-motto">"Bijak Bersama, Sukses Bersama"</p>
                     </div>
@@ -579,7 +578,7 @@
                 <div class="powered-wrapper">
                     <div class="powered-content">
                         <div class="powered-logo">
-                            <img src="../design/logo/apt.png" alt="APT Logo">
+                            <img src="asset/design/logo/apt.png" alt="APT Logo">
                         </div>
                         <div class="powered-text">
                             <span class="powered-label">Proudly Powered By</span>
