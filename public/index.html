@@ -60,7 +60,7 @@
             <a href="#tentang">Tentang Kami</a>
             <a href="#kontak">Hubungi Kami</a>
             <div class="auth-buttons">
-                <a href="login.html" class="btn btn-konsultasi">Mulai Konsultasi</a>
+                <button class="btn btn-konsultasi" id="btnKonsultasi">Mulai Konsultasi</button>
             </div>
             
 
@@ -614,7 +614,9 @@
     <script src="asset/js/partner.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-
+        document.getElementById('btnKonsultasi').addEventListener('click', function () {
+            window.location.href = 'login.html';
+        });
     AOS.init({
         duration: 800,
         once: true
