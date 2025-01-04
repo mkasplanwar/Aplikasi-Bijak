@@ -10,25 +10,25 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
      <!-- Reset CSS - Import pertama -->
-    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="asset/css/reset.css">
 
     <!-- Component CSS - Import setelahnya -->
-    <link rel="stylesheet" href="src/css/navbar.css">
-    <link rel="stylesheet" href="src/css/hero.css">
-    <link rel="stylesheet" href="src/css/download.css">
-    <link rel="stylesheet" href="src/css/fitur.css">
-    <link rel="stylesheet" href="src/css/quote.css">
-    <link rel="stylesheet" href="src/css/partners.css">
-    <link rel="stylesheet" href="src/css/peringatan.css">
-    <link rel="stylesheet" href="src/css/footer.css">
+    <link rel="stylesheet" href="asset/css/navbar.css">
+    <link rel="stylesheet" href="asset/css/hero.css">
+    <link rel="stylesheet" href="asset/css/download.css">
+    <link rel="stylesheet" href="asset/css/fitur.css">
+    <link rel="stylesheet" href="asset/css/quote.css">
+    <link rel="stylesheet" href="asset/css/partners.css">
+    <link rel="stylesheet" href="asset/css/peringatan.css">
+    <link rel="stylesheet" href="asset/css/footer.css">
 
     <!-- Favicon untuk browser -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../design/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="../design/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="asset/design/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="asset/design/favicon/favicon.ico">
     
     <!-- Favicon untuk iOS -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../design/favicon/apple.png">
-    <link rel="mask-icon" href="../design/favicon/favicon.svg" color="#1687A7">
+    <link rel="apple-touch-icon" sizes="180x180" href="asset/design/favicon/apple.png">
+    <link rel="mask-icon" href="asset/design/favicon/favicon.svg" color="#1687A7">
     
     <!-- Favicon untuk Android -->
     <link rel="manifest" href="manifest.json">
@@ -47,12 +47,12 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="../design/logo/navbar1.png" alt="BIJAK Logo">
+            <img src="asset/design/logo/navbar1.png" alt="BIJAK Logo">
         </div>
     
         <div class="nav-links">
             <div class="mobile-logo">
-                <img src="../design/logo/navbar1.png" alt="BIJAK Logo">
+                <img src="asset/design/logo/navbar1.png" alt="BIJAK Logo">
             </div>
             
             <a href="#beranda">Beranda</a>
