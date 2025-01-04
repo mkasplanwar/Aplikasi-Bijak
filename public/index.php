@@ -23,12 +23,12 @@
     <link rel="stylesheet" href="src/css/footer.css">
 
     <!-- Favicon untuk browser -->
-    <link rel="icon" type="image/png" sizes="32x32" href="design/favicon/favicon.ico">
-    <link rel="icon" type="image/png" sizes="16x16" href="design/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../design/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="../design/favicon/favicon.ico">
     
     <!-- Favicon untuk iOS -->
-    <link rel="apple-touch-icon" sizes="180x180" href="design/favicon/apple.png">
-    <link rel="mask-icon" href="design/favicon/favicon.svg" color="#1687A7">
+    <link rel="apple-touch-icon" sizes="180x180" href="../design/favicon/apple.png">
+    <link rel="mask-icon" href="../design/favicon/favicon.svg" color="#1687A7">
     
     <!-- Favicon untuk Android -->
     <link rel="manifest" href="manifest.json">
@@ -47,12 +47,12 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <img src="design/logo/navbar1.png" alt="BIJAK Logo">
+            <img src="../design/logo/navbar1.png" alt="BIJAK Logo">
         </div>
     
         <div class="nav-links">
             <div class="mobile-logo">
-                <img src="design/logo/navbar1.png" alt="BIJAK Logo">
+                <img src="../design/logo/navbar1.png" alt="BIJAK Logo">
             </div>
             
             <a href="#beranda">Beranda</a>
@@ -179,7 +179,7 @@
                         Akses berbagai fitur unggulan untuk mengelola dan mengembangkan Bisnis Anda.
                     </p>
                     <div class="bijak__app-preview">
-                        <img src="design/user-interface/home.svg" alt="BIJAK Business App Interface">
+                        <img src="../design/user-interface/home.svg" alt="BIJAK Business App Interface">
                     </div>
                     <a href="#download" class="bijak__download-btn">
                         <i class="fa-solid fa-right-to-bracket"></i>
@@ -195,7 +195,7 @@
                         Platform khusus untuk memberikan layanan konsultasi berkualitas kepada pelaku UMKM
                     </p>
                     <div class="bijak__app-preview">
-                        <img src="design/user-interface/consultant.svg" alt="BIJAK Consultant App Interface">
+                        <img src="../design/user-interface/consultant.svg" alt="BIJAK Consultant App Interface">
                     </div>
                     <a href="#download" class="bijak__download-btn bijak__download-btn--consultant">
                         <i class="fa-solid fa-right-to-bracket"></i>
@@ -504,7 +504,7 @@
                 <!-- Brand Section -->
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="design/logo/navbar1.png" alt="BIJAK Logo">
+                        <img src="../design/logo/navbar1.png" alt="BIJAK Logo">
                         <p class="brand-description">BIJAK adalah platform konsultasi bisnis yang mempertemukan pelaku UMKM dengan konsultan bisnis.</p>
                         <p class="footer-motto">"Bijak Bersama, Sukses Bersama"</p>
                     </div>
@@ -579,7 +579,7 @@
                 <div class="powered-wrapper">
                     <div class="powered-content">
                         <div class="powered-logo">
-                            <img src="design/logo/apt.png" alt="APT Logo">
+                            <img src="../design/logo/apt.png" alt="APT Logo">
                         </div>
                         <div class="powered-text">
                             <span class="powered-label">Proudly Powered By</span>
